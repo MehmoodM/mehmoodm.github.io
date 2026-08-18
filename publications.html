@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Publications | Mubashar Mehmood</title>
+
+    <meta name="description"
+          content="Research publications by Mubashar Mehmood in Medical AI, deep learning, medical image analysis, cloud computing, and fog computing.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1000px, 90%);
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            border-bottom: 1px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-inner {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #2563eb;
+        }
+
+        /* Page header */
+
+        .page-header {
+            padding: 85px 0 55px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .eyebrow {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: #111827;
+            margin-bottom: 18px;
+        }
+
+        .page-intro {
+            max-width: 720px;
+            color: #6b7280;
+            font-size: 1.05rem;
+        }
+
+        /* Publication section */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-label {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #111827;
+            margin-bottom: 28px;
+        }
+
+        .publication {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            background: #ffffff;
+        }
+
+        .publication-number {
+            color: #2563eb;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .publication h3 {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            color: #111827;
+            margin-bottom: 14px;
+        }
+
+        .authors {
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        .venue {
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 17px;
+            border-radius: 7px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .button-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .button-secondary {
+            border: 1px solid #d1d5db;
+            color: #374151;
+        }
+
+        .button-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Featured research */
+
+        .featured {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 55px;
+        }
+
+        .featured h2 {
+            margin-bottom: 15px;
+        }
+
+        .featured p {
+            color: #6b7280;
+            max-width: 800px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 35px 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .nav-inner {
+                align-items: flex-start;
+                padding: 16px 0;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .page-header {
+                padding: 65px 0 45px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .publication {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="index.html" class="logo">
+            Mubashar Mehmood
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a href="publications.html" class="active">Publications</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#education">Education</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- Header -->
+
+<header class="page-header">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Research &amp; Publications
+        </div>
+
+        <h1>Publications</h1>
+
+        <p class="page-intro">
+            My research work has focused on deep learning, medical image
+            analysis, healthcare applications, and distributed computing.
+            My current research direction is particularly interested in
+            Medical AI and AI-based analysis of medical data.
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- Publications -->
+
+<section>
+
+    <div class="container">
+
+        <!-- Featured publication -->
+
+        <div class="featured">
+
+            <div class="section-label">
+                Featured Research
+            </div>
+
+            <h2>
+                Medical AI &amp; Prostate Cancer Diagnosis
+            </h2>
+
+            <p>
+                My MSc research investigated the use of convolutional neural
+                networks and transfer learning for prostate cancer diagnosis
+                using multi-parametric MRI. This work resulted in a
+                first-author journal publication in <em>Frontiers in Oncology</em>.
+            </p>
+
+        </div>
+
+
+        <!-- Journal Articles -->
+
+        <div class="section-label">
+            Journal Articles
+        </div>
+
+        <h2>Peer-Reviewed Journal Publications</h2>
+
+
+        <article class="publication">
+
+            <div class="publication-number">
+                J.1 · 2023
+            </div>
+
+            <h3>
+                A classifier model for prostate cancer diagnosis using
+                CNNs and transfer learning with multi-parametric MRI
+            </h3>
+
+            <p class="authors">
+                <strong>Mubashar Mehmood</strong>,
+                Abbasi, S. H., Aurangzeb, K., Majeed, M. F.,
+                Anwar, M. S., &amp; Alhussein, M.
+            </p>
+
+            <p class="venue">
+                Frontiers in Oncology, 13, 1225490.
+            </p>
+
+            <div class="buttons">
+
+                <a class="button button-primary"
+                   href="https://doi.org/10.3389/fonc.2023.1225490"
+                   target="_blank">
+                    DOI
+                </a>
+
+                <a class="button button-secondary"
+                   href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2023.1225490/full"
+                   target="_blank">
+                    Full Article
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- Conference Proceedings -->
+
+        <div class="section-label" style="margin-top: 60px;">
+            Conference Proceedings
+        </div>
+
+        <h2>Conference Publications</h2>
+
+
+        <article class="publication">
+
+            <div class="publication-number">
+                C.1 · 2019
+            </div>
+
+            <h3>
+                Efficient resource distribution in cloud and fog computing
+            </h3>
+
+            <p class="authors">
+                <strong>Mubashar Mehmood</strong>,
+                Javaid, N., Akram, J., et al.
+            </p>
+
+            <p class="venue">
+                Advances in Network-Based Information Systems (NBiS),
+                Springer.
+            </p>
+
+        </article>
+
+
+        <article class="publication">
+
+            <div class="publication-number">
+                C.2 · 2018
+            </div>
+
+            <h3>
+                Fog-cloud based platform for utilization of resources
+                using load balancing techniques
+            </h3>
+
+            <p class="authors">
+                Ahmad, N., Javaid, N.,
+                <strong>Mubashar Mehmood</strong>, et al.
+            </p>
+
+            <p class="venue">
+                International Conference on Network-Based Information Systems.
+            </p>
+
+        </article>
+
+
+        <article class="publication">
+
+            <div class="publication-number">
+                C.3 · 2019
+            </div>
+
+            <h3>
+                Load stabilizing in fog computing environment using
+                load balancing algorithm
+            </h3>
+
+            <p class="authors">
+                Abbasi, S. H., Javaid, N., Ashraf, M. H.,
+                <strong>Mubashar Mehmood</strong>, et al.
+            </p>
+
+            <p class="venue">
+                International Conference on Broadband and Wireless
+                Computing (BWCCA), Springer.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 Mubashar Mehmood
+        </div>
+
+        <div class="footer-links">
+
+            <a href="mailto:mubasharmh145@gmail.com">
+                Email
+            </a>
+
+            <a href="https://github.com/mehmoodm" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/mubashar-mehmood/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
