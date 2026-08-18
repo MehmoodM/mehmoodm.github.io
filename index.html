@@ -1,10 +1,781 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mubashar Mehmood</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mubashar Mehmood | Computer Science & Medical AI</title>
+
+    <meta name="description"
+          content="Mubashar Mehmood — Computer Scientist interested in Machine Learning, Medical AI, Medical Image Analysis, and Deep Learning.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1080px, 90%);
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            border-bottom: 1px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-inner {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 105px 0 90px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: #2563eb;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            color: #111827;
+            margin-bottom: 22px;
+        }
+
+        .hero-title {
+            font-size: 1.35rem;
+            color: #4b5563;
+            margin-bottom: 22px;
+        }
+
+        .hero-text {
+            max-width: 680px;
+            color: #6b7280;
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 19px;
+            border-radius: 7px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .button-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .button-secondary {
+            border: 1px solid #d1d5db;
+            color: #374151;
+        }
+
+        .button-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Research card */
+
+        .research-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            background: #f9fafb;
+        }
+
+        .research-card h2 {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .research-item {
+            padding: 13px 0;
+            border-bottom: 1px solid #e5e7eb;
+            color: #4b5563;
+        }
+
+        .research-item:last-child {
+            border-bottom: none;
+        }
+
+        .research-item strong {
+            display: block;
+            color: #111827;
+            margin-bottom: 2px;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 85px 0;
+        }
+
+        section:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        .section-heading {
+            margin-bottom: 38px;
+        }
+
+        .section-label {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #111827;
+            letter-spacing: -0.5px;
+        }
+
+        .section-intro {
+            max-width: 720px;
+            color: #6b7280;
+            margin-top: 12px;
+        }
+
+        /* Research */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .research-box {
+            padding: 27px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+        }
+
+        .research-box h3 {
+            font-size: 1.1rem;
+            color: #111827;
+            margin-bottom: 9px;
+        }
+
+        .research-box p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        /* Publication */
+
+        .publication {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 32px;
+        }
+
+        .publication-type {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .publication h3 {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .publication p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        /* Project */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 27px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .project h3 {
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .project p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .tags {
+            font-size: 0.8rem;
+            color: #2563eb;
+        }
+
+        /* Education */
+
+        .education-item {
+            padding: 25px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-item h3 {
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .education-item .institution {
+            color: #4b5563;
+        }
+
+        .education-item .details {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 35px 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 800px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-inner {
+                align-items: flex-start;
+                padding: 16px 0;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Mubashar Mehmood</h1>
-    <p>Computer Science | Machine Learning | Medical AI</p>
+
+<!-- Navigation -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">Mubashar Mehmood</a>
+
+        <ul class="nav-links">
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publication">Publications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- Hero -->
+
+<header class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                Computer Science · Machine Learning · Medical AI
+            </div>
+
+            <h1>Mubashar<br>Mehmood</h1>
+
+            <p class="hero-title">
+                Computer Scientist interested in Deep Learning and AI for Healthcare.
+            </p>
+
+            <p class="hero-text">
+                My research interests focus on medical image analysis,
+                computer-aided diagnosis, and deep learning methods for
+                healthcare applications. My MSc research focused on
+                prostate cancer diagnosis using convolutional neural
+                networks, transfer learning, and multi-parametric MRI.
+            </p>
+
+            <div class="buttons">
+                <a class="button button-primary" href="#research">
+                    Research
+                </a>
+
+                <a class="button button-secondary"
+                   href="https://github.com/mehmoodm"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <a class="button button-secondary"
+                   href="https://www.linkedin.com/in/mubashar-mehmood/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="research-card">
+
+            <h2>Research Focus</h2>
+
+            <div class="research-item">
+                <strong>Medical AI</strong>
+                Computer-aided diagnosis and healthcare applications
+            </div>
+
+            <div class="research-item">
+                <strong>Medical Image Analysis</strong>
+                Deep learning for medical image classification
+            </div>
+
+            <div class="research-item">
+                <strong>Computer Vision</strong>
+                CNNs, transfer learning, and image-based learning
+            </div>
+
+            <div class="research-item">
+                <strong>Emerging Interests</strong>
+                Multimodal learning, LLMs, and generative AI
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- Research -->
+
+<section id="research">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">Research</div>
+            <h2>Areas of Interest</h2>
+
+            <p class="section-intro">
+                My background combines computer science, deep learning,
+                and medical image analysis. I am particularly interested
+                in developing reliable AI methods for healthcare.
+            </p>
+        </div>
+
+
+        <div class="research-grid">
+
+            <div class="research-box">
+                <h3>Medical AI</h3>
+                <p>
+                    Computer-aided diagnosis and machine learning
+                    approaches for healthcare applications.
+                </p>
+            </div>
+
+            <div class="research-box">
+                <h3>Medical Imaging</h3>
+                <p>
+                    Deep learning and computer vision for analysis
+                    and classification of medical images.
+                </p>
+            </div>
+
+            <div class="research-box">
+                <h3>Deep Learning</h3>
+                <p>
+                    CNNs, transfer learning, and developing
+                    data-driven models for real-world problems.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Publication -->
+
+<section id="publication">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">Publication</div>
+            <h2>Featured Research</h2>
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-type">
+                Journal Article · 2023
+            </div>
+
+            <h3>
+                A classifier model for prostate cancer diagnosis using
+                CNNs and transfer learning with multi-parametric MRI
+            </h3>
+
+            <p>
+                <strong>Mubashar Mehmood</strong>, Abbasi, S. H.,
+                Aurangzeb, K., Majeed, M. F., Anwar, M. S.,
+                &amp; Alhussein, M.
+                <br>
+                <em>Frontiers in Oncology</em>, 13, 1225490.
+            </p>
+
+            <a class="button button-secondary"
+               href="https://doi.org/10.3389/fonc.2023.1225490"
+               target="_blank">
+                View Publication
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Projects -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">Projects</div>
+            <h2>Selected Work</h2>
+
+            <p class="section-intro">
+                A selection of completed projects applying machine
+                learning and AI to healthcare and other practical problems.
+                More projects will be added as they are completed.
+            </p>
+        </div>
+
+
+        <div class="project-grid">
+
+            <div class="project">
+
+                <h3>Chronic Kidney Disease Predictor</h3>
+
+                <p>
+                    Interactive machine learning application for
+                    predicting chronic kidney disease risk from
+                    clinical patient data.
+                </p>
+
+                <div class="tags">
+                    Python · Streamlit · Gradient Boosting · Healthcare
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Prostate Cancer Classification</h3>
+
+                <p>
+                    Deep learning research using CNNs and transfer
+                    learning for prostate cancer classification from
+                    multi-parametric MRI.
+                </p>
+
+                <div class="tags">
+                    Deep Learning · CNN · Transfer Learning · MRI
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Education -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">Education</div>
+            <h2>Academic Background</h2>
+        </div>
+
+
+        <div class="education-item">
+
+            <h3>Master of Science in Computer Science</h3>
+
+            <div class="institution">
+                COMSATS University Islamabad, Pakistan · 2018–2021
+            </div>
+
+            <div class="details">
+                CGPA: 3.32/4.0
+                <br>
+                Thesis: <em>
+                A Classifier Model for Prostate Cancer Diagnosis
+                Using CNNs and Transfer Learning with Multi-parametric MRI
+                </em>
+            </div>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <h3>Bachelor of Science in Computer Science</h3>
+
+            <div class="institution">
+                COMSATS University Islamabad, Pakistan · 2013–2017
+            </div>
+
+            <div class="details">
+                Final Year Project:
+                <em>SnipBird: A Web Tool for Managing and Storing Research Content</em>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Contact -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">Contact</div>
+            <h2>Get in Touch</h2>
+
+            <p class="section-intro">
+                I am interested in research opportunities in
+                Medical AI, medical image analysis, deep learning,
+                and related areas.
+            </p>
+        </div>
+
+
+        <div class="buttons">
+
+            <a class="button button-primary"
+               href="mailto:mubasharmh145@gmail.com">
+                Email Me
+            </a>
+
+            <a class="button button-secondary"
+               href="https://github.com/mehmoodm"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a class="button button-secondary"
+               href="https://www.linkedin.com/in/mubashar-mehmood/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 Mubashar Mehmood
+        </div>
+
+        <div class="footer-links">
+            <a href="mailto:mubasharmh145@gmail.com">Email</a>
+            <a href="https://github.com/mehmoodm" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/mubashar-mehmood/" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+
+    </div>
+
+</footer>
+
 </body>
 </html>
