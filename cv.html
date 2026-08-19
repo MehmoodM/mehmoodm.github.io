@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV | Mubashar Mehmood</title>
+
+    <meta name="description"
+          content="Academic CV of Mubashar Mehmood, with research experience, publications, education, projects, and technical skills in Medical AI and machine learning.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1000px, 90%);
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            border-bottom: 1px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-inner {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #2563eb;
+        }
+
+        /* Header */
+
+        .page-header {
+            padding: 75px 0 55px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .eyebrow {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: #4b5563;
+            font-size: 1.08rem;
+            max-width: 720px;
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 17px;
+            border-radius: 7px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .button-primary {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .button-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .button-secondary {
+            border: 1px solid #d1d5db;
+            color: #374151;
+        }
+
+        .button-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section-label {
+            color: #2563eb;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            color: #111827;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            color: #111827;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        .muted {
+            color: #6b7280;
+        }
+
+        /* Profile */
+
+        .profile {
+            max-width: 820px;
+            color: #4b5563;
+        }
+
+        /* Timeline */
+
+        .timeline-item {
+            margin-bottom: 38px;
+            padding-left: 22px;
+            border-left: 2px solid #e5e7eb;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .date {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #4b5563;
+            margin-bottom: 10px;
+        }
+
+        .detail {
+            color: #4b5563;
+            max-width: 820px;
+        }
+
+        .detail strong {
+            color: #374151;
+        }
+
+        /* Publications */
+
+        .publication {
+            margin-bottom: 28px;
+        }
+
+        .publication:last-child {
+            margin-bottom: 0;
+        }
+
+        .publication-number {
+            color: #2563eb;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .publication-journal {
+            color: #6b7280;
+        }
+
+        .publication-link {
+            display: inline-block;
+            margin-top: 7px;
+            color: #2563eb;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Lists */
+
+        .simple-list {
+            padding-left: 20px;
+            color: #4b5563;
+        }
+
+        .simple-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+
+        .skill-group {
+            margin-bottom: 22px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group strong {
+            display: block;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .skill-group p {
+            color: #4b5563;
+        }
+
+        /* Projects */
+
+        .project {
+            padding: 22px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .project:first-child {
+            padding-top: 0;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .project-title {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .project p {
+            color: #4b5563;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 4px 9px;
+            border-radius: 5px;
+            font-size: 0.76rem;
+        }
+
+        /* References */
+
+        .references {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .reference {
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 9px;
+        }
+
+        .reference strong {
+            display: block;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .reference p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .reference a {
+            color: #2563eb;
+            font-size: 0.88rem;
+            word-break: break-word;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 35px 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 750px) {
+
+            .nav-inner {
+                align-items: flex-start;
+                padding: 16px 0;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .page-header {
+                padding: 60px 0 45px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .references {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="index.html" class="logo">
+            Mubashar Mehmood
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="cv.html" class="active">CV</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- Header -->
+
+<header class="page-header">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Academic Curriculum Vitae
+        </div>
+
+        <h1>Mubashar Mehmood</h1>
+
+        <p class="subtitle">
+            Computer Science · Medical AI · Machine Learning ·
+            Medical Image Analysis
+        </p>
+
+        <div class="header-links">
+
+            <a class="button button-primary"
+               href="cv.pdf"
+               target="_blank">
+                Download CV (PDF)
+            </a>
+
+            <a class="button button-secondary"
+               href="https://github.com/mehmoodm"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a class="button button-secondary"
+               href="https://www.linkedin.com/in/mubashar-mehmood/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- Profile -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Profile</div>
+
+        <h2>Research Profile</h2>
+
+        <p class="profile">
+            Computer Science graduate with research experience in
+            machine learning, deep learning, and medical image analysis.
+            My MSc research focused on prostate cancer classification
+            using convolutional neural networks, transfer learning,
+            and multi-parametric MRI. My current interests include
+            Medical AI, computer vision, clinical machine learning,
+            and emerging applications of generative AI in healthcare.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Education -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Education</div>
+
+        <h2>Education</h2>
+
+        <div class="timeline-item">
+
+            <div class="date">2018 – 2021</div>
+
+            <h3>Master of Science in Computer Science</h3>
+
+            <p class="institution">
+                COMSATS University Islamabad, Pakistan
+                · CGPA: 3.32/4.0
+            </p>
+
+            <p class="detail">
+                <strong>Thesis:</strong>
+                <em>
+                    A Classifier Model for Prostate Cancer Diagnosis
+                    Using CNNs and Transfer Learning with Multi-parametric MRI
+                </em>
+                <br><br>
+                Developed a deep learning model using CNNs and transfer
+                learning to classify prostate cancer from multi-parametric
+                MRI (mpMRI) data.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="date">2013 – 2017</div>
+
+            <h3>Bachelor of Science in Computer Science</h3>
+
+            <p class="institution">
+                COMSATS University Islamabad, Pakistan
+            </p>
+
+            <p class="detail">
+                <strong>Final Year Project:</strong>
+                <em>
+                    SnipBird: A Web Tool for Managing and Storing
+                    Research Content
+                </em>
+                <br><br>
+                Developed a web-based research management tool for
+                capturing, organizing, and retrieving digital content
+                using PHP, MySQL, JavaScript, and AJAX.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Scholarships -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Awards</div>
+
+        <h2>Scholarships &amp; Awards</h2>
+
+        <div class="timeline-item">
+
+            <div class="date">2018 – 2020</div>
+
+            <h3>Punjab Educational Endowment Fund (PEEF) Scholarship</h3>
+
+            <p class="detail">
+                Merit-based scholarship awarded for the duration of
+                the Master of Science in Computer Science program.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Research Experience -->
+
+<section id="research">
+
+    <div class="container">
+
+        <div class="section-label">Research</div>
+
+        <h2>Research Experience</h2>
+
+        <div class="timeline-item">
+
+            <div class="date">Research Assistant</div>
+
+            <h3>COMSATS University Islamabad, Pakistan</h3>
+
+            <ul class="simple-list">
+
+                <li>
+                    Developed a deep learning framework for prostate
+                    cancer classification using multi-parametric MRI data.
+                </li>
+
+                <li>
+                    Researched load balancing and resource allocation
+                    algorithms in Cloud and Fog computing for distributed
+                    computing environments.
+                </li>
+
+                <li>
+                    Conducted software refactoring of legacy systems by
+                    identifying and addressing cross-cutting concerns
+                    to improve software modularity.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Research Interests -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Research Interests</div>
+
+        <h2>Research Interests</h2>
+
+        <div class="skill-group">
+
+            <strong>Medical AI</strong>
+
+            <p>
+                Medical image analysis, computer-aided diagnosis,
+                deep learning for medical imaging, image classification,
+                and multi-parametric MRI.
+            </p>
+
+        </div>
+
+        <div class="skill-group">
+
+            <strong>Computer Vision</strong>
+
+            <p>
+                Deep learning, transfer learning, image representation
+                learning, and multimodal learning.
+            </p>
+
+        </div>
+
+        <div class="skill-group">
+
+            <strong>Emerging Interests</strong>
+
+            <p>
+                Large language models (LLMs), retrieval-augmented
+                generation (RAG), and synthetic data generation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Publications -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Research Output</div>
+
+        <h2>Academic Publications</h2>
+
+
+        <div class="publication">
+
+            <div class="publication-number">Journal Article</div>
+
+            <p>
+                <strong>Mehmood, M.</strong>, Abbasi, S. H.,
+                Aurangzeb, K., Majeed, M. F., Anwar, M. S.,
+                &amp; Alhussein, M. (2023).
+                <span class="publication-title">
+                    A classifier model for prostate cancer diagnosis
+                    using CNNs and transfer learning with
+                    multi-parametric MRI.
+                </span>
+                <span class="publication-journal">
+                    Frontiers in Oncology, 13, 1225490.
+                </span>
+            </p>
+
+            <a class="publication-link"
+               href="https://doi.org/10.3389/fonc.2023.1225490"
+               target="_blank">
+                View publication →
+            </a>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-number">
+                Conference Proceedings
+            </div>
+
+            <p>
+                <strong>Mehmood, M.</strong>, Javaid, N.,
+                Akram, J., et al. (2019).
+                <span class="publication-title">
+                    Efficient resource distribution in cloud and fog computing.
+                </span>
+                In <em>Advances in Network-Based Information Systems (NBiS)</em>.
+                Springer.
+            </p>
+
+        </div>
+
+
+        <div class="publication">
+
+            <p>
+                Ahmad, N., Javaid, N.,
+                <strong>Mehmood, M.</strong>, et al. (2018).
+                <span class="publication-title">
+                    Fog-cloud based platform for utilization of resources
+                    using load balancing techniques.
+                </span>
+                In <em>International Conference on Network-Based
+                Information Systems</em>.
+            </p>
+
+        </div>
+
+
+        <div class="publication">
+
+            <p>
+                Abbasi, S. H., Javaid, N., Ashraf, M. H.,
+                <strong>Mehmood, M.</strong>, et al. (2019).
+                <span class="publication-title">
+                    Load stabilizing in fog computing environment
+                    using load balancing algorithm.
+                </span>
+                In <em>International Conference on Broadband and
+                Wireless Computing (BWCCA)</em>. Springer.
+            </p>
+
+        </div>
+
+
+        <p class="muted" style="margin-top: 25px;">
+            See the <a href="publications.html"
+                       style="color:#2563eb;">
+                Publications page
+            </a>
+            for the complete publication list.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Projects -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Selected Work</div>
+
+        <h2>Selected Academic Projects</h2>
+
+
+        <div class="project">
+
+            <div class="project-title">
+                Prostate Cancer Classification from Multi-parametric MRI
+            </div>
+
+            <p>
+                Developed a deep learning model using CNNs and transfer
+                learning for prostate cancer classification from
+                multi-parametric MRI data. This work formed the basis
+                of the MSc thesis and first-author journal publication.
+            </p>
+
+            <div class="tags">
+                <span class="tag">CNN</span>
+                <span class="tag">Transfer Learning</span>
+                <span class="tag">MRI</span>
+                <span class="tag">Medical AI</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-title">
+                Chronic Kidney Disease Predictor
+            </div>
+
+            <p>
+                Developed an interactive web application using Python,
+                Streamlit, and Gradient Boosting to predict chronic
+                kidney disease risk from clinical patient data.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Gradient Boosting</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Clinical ML</span>
+            </div>
+
+            <p style="margin-top: 10px;">
+                <a href="projects.html"
+                   style="color:#2563eb; font-weight:600;">
+                    View project →
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-title">
+                Disease Prediction Models
+            </div>
+
+            <p>
+                Developed and evaluated machine learning models including
+                ANN, SVM, and Logistic Regression using publicly available
+                datasets for diabetes, Parkinson's disease, and heart
+                disease prediction.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">ANN</span>
+                <span class="tag">SVM</span>
+                <span class="tag">Logistic Regression</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-title">
+                Chest X-Ray Classification
+            </div>
+
+            <p>
+                Implemented a transfer learning approach using a
+                fine-tuned DenseNet model for multi-class chest
+                X-ray classification.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Computer Vision</span>
+                <span class="tag">DenseNet</span>
+                <span class="tag">Transfer Learning</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-title">
+                Skin Lesion Classification
+            </div>
+
+            <p>
+                Developed a CNN-based model for classification of
+                benign and malignant skin lesions.
+            </p>
+
+            <div class="tags">
+                <span class="tag">CNN</span>
+                <span class="tag">Medical Imaging</span>
+                <span class="tag">Classification</span>
+            </div>
+
+        </div>
+
+
+        <p style="margin-top:25px;">
+            <a href="projects.html"
+               style="color:#2563eb; font-weight:600;">
+                View all projects →
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Technical Skills -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Technical Skills</div>
+
+        <h2>Technical Skills</h2>
+
+
+        <div class="skill-group">
+
+            <strong>Machine Learning &amp; AI</strong>
+
+            <p>
+                Machine learning, deep learning, computer vision,
+                transfer learning, neural networks.
+            </p>
+
+        </div>
+
+
+        <div class="skill-group">
+
+            <strong>Medical AI</strong>
+
+            <p>
+                Medical image analysis, computer-aided diagnosis,
+                medical image classification, multi-parametric MRI.
+            </p>
+
+        </div>
+
+
+        <div class="skill-group">
+
+            <strong>Programming &amp; Libraries</strong>
+
+            <p>
+                Python, PyTorch, TensorFlow, Keras, scikit-learn,
+                NumPy, Pandas, OpenCV.
+            </p>
+
+        </div>
+
+
+        <div class="skill-group">
+
+            <strong>Data &amp; Visualization</strong>
+
+            <p>
+                Data preprocessing, exploratory data analysis,
+                Matplotlib, Seaborn.
+            </p>
+
+        </div>
+
+
+        <div class="skill-group">
+
+            <strong>Development Tools</strong>
+
+            <p>
+                Jupyter Notebook, Google Colab, VS Code, Anaconda,
+                Git, GitHub.
+            </p>
+
+        </div>
+
+
+        <div class="skill-group">
+
+            <strong>Technical Writing</strong>
+
+            <p>
+                LaTeX, Overleaf, academic writing,
+                technical documentation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Certifications -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Training</div>
+
+        <h2>Certifications &amp; Specialized Training</h2>
+
+        <ul class="simple-list">
+
+            <li>
+                <strong>AI for Medical Diagnosis</strong> —
+                DeepLearning.AI
+            </li>
+
+            <li>
+                <strong>Neural Networks and Deep Learning</strong> —
+                DeepLearning.AI
+            </li>
+
+            <li>
+                <strong>Building Deep Learning Models with TensorFlow</strong> —
+                IBM
+            </li>
+
+            <li>
+                <strong>Introduction to Computer Vision and Image Processing</strong> —
+                IBM
+            </li>
+
+            <li>
+                <strong>Machine Learning with Python</strong> —
+                IBM
+            </li>
+
+            <li>
+                <strong>Python for Data Science, AI &amp; Development</strong> —
+                IBM
+            </li>
+
+            <li>
+                <strong>Generative AI for Healthcare</strong> —
+                Google Cloud
+            </li>
+
+            <li>
+                <strong>Generative AI and LLMs: Architecture and Data Preparation</strong> —
+                IBM
+            </li>
+
+            <li>
+                <strong>Large Language Models, Image Generation,
+                and Responsible AI</strong> —
+                Google Cloud
+            </li>
+
+            <li>
+                <strong>Introduction to Deep Learning &amp;
+                Neural Networks with Keras</strong> —
+                IBM
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- Additional Information -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Additional Information</div>
+
+        <h2>Languages</h2>
+
+        <p class="profile">
+            <strong>English:</strong> Professional Working Proficiency
+            <br>
+            <strong>Urdu:</strong> Native
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- References -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">References</div>
+
+        <h2>Academic References</h2>
+
+        <div class="references">
+
+            <div class="reference">
+
+                <strong>Dr. Waqar Ali</strong>
+
+                <p>
+                    Postdoctoral Researcher<br>
+                    ZHAW School of Engineering<br>
+                    Switzerland
+                </p>
+
+                <a href="mailto:aliw@zhaw.ch">
+                    aliw@zhaw.ch
+                </a>
+
+            </div>
+
+
+            <div class="reference">
+
+                <strong>Dr. Nouman Ahmad</strong>
+
+                <p>
+                    Postdoctoral Researcher<br>
+                    Karolinska Institutet<br>
+                    Sweden
+                </p>
+
+                <a href="mailto:nouman.ahmad@ki.se">
+                    nouman.ahmad@ki.se
+                </a>
+
+            </div>
+
+
+            <div class="reference">
+
+                <strong>Dr. Shahid Hussain</strong>
+
+                <p>
+                    Assistant Professor<br>
+                    University of Oregon<br>
+                    USA
+                </p>
+
+                <a href="mailto:shussain@uoregon.edu">
+                    shussain@uoregon.edu
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 Mubashar Mehmood
+        </div>
+
+        <div class="footer-links">
+
+            <a href="mailto:mubasharmh145@gmail.com">
+                Email
+            </a>
+
+            <a href="https://github.com/mehmoodm"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/mubashar-mehmood/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
