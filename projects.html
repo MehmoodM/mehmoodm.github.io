@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Mubashar Mehmood</title>
+
+    <meta name="description"
+          content="Selected machine learning, medical AI, computer vision, and healthcare projects by Mubashar Mehmood.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1000px, 90%);
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            border-bottom: 1px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-inner {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #2563eb;
+        }
+
+        /* Page header */
+
+        .page-header {
+            padding: 85px 0 55px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .eyebrow {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: #111827;
+            margin-bottom: 18px;
+        }
+
+        .page-intro {
+            max-width: 720px;
+            color: #6b7280;
+            font-size: 1.05rem;
+        }
+
+        /* Main content */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-label {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #111827;
+            margin-bottom: 28px;
+        }
+
+        /* Project cards */
+
+        .project-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 28px;
+            background: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-status {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 1.45rem;
+            line-height: 1.4;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .project-category {
+            color: #6b7280;
+            font-size: 0.92rem;
+            margin-bottom: 18px;
+        }
+
+        .project-description {
+            color: #4b5563;
+            max-width: 820px;
+            margin-bottom: 22px;
+        }
+
+        .project-highlights {
+            margin: 0 0 24px 20px;
+            color: #4b5563;
+        }
+
+        .project-highlights li {
+            margin-bottom: 6px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 0.78rem;
+            color: #4b5563;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 17px;
+            border-radius: 7px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .button-primary {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .button-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .button-secondary {
+            border: 1px solid #d1d5db;
+            color: #374151;
+        }
+
+        .button-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Future projects */
+
+        .future-note {
+            margin-top: 55px;
+            padding: 28px;
+            border-radius: 12px;
+            background: #f9fafb;
+            color: #6b7280;
+        }
+
+        .future-note strong {
+            color: #374151;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 35px 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .nav-inner {
+                align-items: flex-start;
+                padding: 16px 0;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .page-header {
+                padding: 65px 0 45px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .project-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="index.html" class="logo">
+            Mubashar Mehmood
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="index.html#education">Education</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- Page Header -->
+
+<header class="page-header">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Research &amp; Development
+        </div>
+
+        <h1>Projects</h1>
+
+        <p class="page-intro">
+            Selected academic and applied projects in machine learning,
+            Medical AI, healthcare data, computer vision, and AI deployment.
+            This page will grow as I develop and document new research projects.
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- Featured Projects -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            Featured Projects
+        </div>
+
+        <h2>Selected Work</h2>
+
+
+        <!-- CKD Project -->
+
+        <article class="project-card">
+
+            <div class="project-status">
+                Academic Project
+            </div>
+
+            <h3>
+                Chronic Kidney Disease Predictor
+            </h3>
+
+            <p class="project-category">
+                Clinical Machine Learning · Healthcare Data · Streamlit
+            </p>
+
+            <p class="project-description">
+                An interactive machine learning application for predicting
+                chronic kidney disease from selected clinical patient
+                measurements. The project covers data preprocessing,
+                class balancing, model comparison, model evaluation, and
+                deployment through a Streamlit web application.
+            </p>
+
+            <ul class="project-highlights">
+
+                <li>
+                    Processed clinical and categorical patient data,
+                    including missing-value handling and feature encoding.
+                </li>
+
+                <li>
+                    Applied feature scaling and SMOTE-based class balancing.
+                </li>
+
+                <li>
+                    Compared multiple machine learning classification models.
+                </li>
+
+                <li>
+                    Selected a Gradient Boosting classifier for the deployed
+                    application.
+                </li>
+
+                <li>
+                    Built a Streamlit interface for entering patient
+                    measurements and obtaining a model prediction.
+                </li>
+
+            </ul>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Gradient Boosting</span>
+                <span class="tag">SMOTE</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Clinical ML</span>
+            </div>
+
+            <div class="buttons">
+
+                <a class="button button-primary"
+                   href="https://github.com/MehmoodM/Ckd-kidney-Predictor"
+                   target="_blank">
+                    GitHub Repository
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- Future projects note -->
+
+        <div class="future-note">
+
+            <strong>More projects will be added as they are completed.</strong>
+
+            <br><br>
+
+            Projects will be selected based on their relevance,
+            technical depth, research value, and connection to
+            Medical AI and machine learning.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 Mubashar Mehmood
+        </div>
+
+        <div class="footer-links">
+
+            <a href="mailto:mubasharmh145@gmail.com">
+                Email
+            </a>
+
+            <a href="https://github.com/mehmoodm"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/mubashar-mehmood/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
